@@ -8,7 +8,7 @@ public class Building {
     private double requestedBuildingTemperature;
 
     public Building() {
-        this.requestedBuildingTemperature = 20.0;
+        this.requestedBuildingTemperature = 25.0;
         this.rooms = new ArrayList<>();
         rooms.add(new Apartment(101, "XYZ"));
         rooms.add(new Apartment(102, "ABC"));
