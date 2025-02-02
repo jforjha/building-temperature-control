@@ -7,6 +7,7 @@ public class Rooms {
     private double currentTemperature;
     private boolean heatingFlag;
     private boolean coolingFlag;
+    private static final double SETPOINT_TEMPERATURE = 2;
 
     public Rooms(int roomId) {
         this.roomId = roomId;
@@ -32,15 +33,15 @@ public class Rooms {
     }
 
     public void balanceTemperature(double requestedBuildingTemperature) {
-        if (currentTemperature < requestedBuildingTemperature) {
+        if (Math.abs(currentTemperature - requestedBuildingTemperature)< SETPOINT_TEMPERATURE) {
+            heatingFlag = false;
+            coolingFlag = false;
+        } else if (currentTemperature < requestedBuildingTemperature) {
             heatingFlag = true;
             coolingFlag = false;
-        } else if (currentTemperature > requestedBuildingTemperature) {
-            heatingFlag = false;
-            coolingFlag = true;
         } else {
             heatingFlag = false;
-            coolingFlag = false;
+            coolingFlag = true;
         }
     }
     

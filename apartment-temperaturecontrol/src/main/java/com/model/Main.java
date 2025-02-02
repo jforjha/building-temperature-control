@@ -99,7 +99,7 @@ public class Main {
         System.out.print("\nDo you want to continue with the Budilding Temperature Control System? (Y to continue, N to exit): ");
         char continueOption = Character.toUpperCase(scanner.next().charAt(0));
         if (continueOption == 'N') {
-            System.out.println("Exiting the program...");
+            System.out.println("Exiting the Budilding Temperature Control System...");
             break; 
         }
         
