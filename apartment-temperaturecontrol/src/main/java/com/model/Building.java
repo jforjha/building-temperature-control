@@ -43,5 +43,13 @@ public class Building {
         rooms.add(room);
         room.balanceTemperature(requestedBuildingTemperature);
     }
+    
+    public void simulateBuildingTemperature() {
+        for (Rooms room : rooms) {
+            room.automaticTemperatureChange();
+            room.balanceTemperature(requestedBuildingTemperature);
+        }
+    }
+
 
 }

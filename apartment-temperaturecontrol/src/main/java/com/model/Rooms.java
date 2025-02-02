@@ -43,4 +43,13 @@ public class Rooms {
             coolingFlag = false;
         }
     }
+    
+    public void automaticTemperatureChange() {
+        if (heatingFlag && currentTemperature < 40) {
+        	currentTemperature += 1; 
+        } else if (coolingFlag && currentTemperature > 10) {
+        	currentTemperature -= 1; 
+        }
+    }
+
 }
