@@ -38,4 +38,10 @@ public class Building {
         
         }
     }
+    
+    public void addRoom(Rooms room) {
+        rooms.add(room);
+        room.balanceTemperature(requestedBuildingTemperature);
+    }
+
 }

@@ -26,6 +26,31 @@ public class Main {
        
         building.setRequestedBuildingTemperature(userInputTemp);
         
+        
+        //Room Adding Functionality
+        
+        System.out.print("\nWant to add a new room? \nPress Y for add N for discard: ");
+        
+        char option = scanner.next().charAt(0);
+        
+        if (option == 'Y') {
+            System.out.print("Enter Room ID: ");
+            int roomId = scanner.nextInt();
+            System.out.print("Wants to add an Apartment or Common Room? \nPress A for Apartment and C for Common Room  ");
+            char roomType = scanner.next().charAt(0);
+
+            if (roomType == 'A') {
+                System.out.print("Kinldy Enter Owner Name: ");
+                String owner = scanner.next();
+                building.addRoom(new Apartment(roomId, owner));
+            } else {
+                System.out.print("Kindly enter room type: ");
+                String type = scanner.next();
+                building.addRoom(new commonRoom(roomId, type));
+            }
+        }
+
+        
        
     }
         
