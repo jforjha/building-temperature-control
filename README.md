@@ -6,7 +6,7 @@ The system allows the user to set the desired building temperature and add rooms
 ## Assumptions
 - Added the condition for the building for the supported temperature range is 10-40 degrees for whole and the types of rooms.
 - Added the condition to continue with the functionalities of building temperature control system or wants to exit it.
-- 
+  
 ## Features
 - Set the requested building temperature.
 - Add new rooms (either apartments or common rooms).
@@ -18,6 +18,7 @@ Before running this application, ensure you have the following installed:
 
 **Java 8 or later** (for running the Java application)
 **Maven** (for building the project)
+**Junit** (for testing the project)
 
 
 ## Example of user interatcion
@@ -54,13 +55,39 @@ Room ID: 105, Current Room Temperature: 14.566621576310926 degrees, Heating Swit
 kindly give the requested Building Temperature:
 
 ## Steps to Run Locally
+1. Clone the repository:
+    ```bash
+    git clone <https://github.com/jforjha/building-temperature-control>
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd <project-directory>
+    ```
+3. Build the project using Maven:
+    ```bash
+    mvn clean install
+    ```
+4. Run the application:
+    ```bash
+    mvn exec:java
 
-Clone the repository to your local machine:
+## Testing
+A test class has been added to ensure the correct functionality of the `Building` and `Apartment` classes. The tests include:
+- Validating the building temperature within the acceptable range.
+- Testing the functionality of adding rooms to the building.
+- Simulating building temperature adjustments and ensuring rooms are adjusted accordingly.
 
+### Test Class
+The test class `BuildingTest` is located under `src/test/java/com/model/`. It uses `JUnit` for unit testing the core functionalities of the application. Here are some of the key tests:
+- **Test for setting the requested building temperature**.
+- **Test for rejecting invalid temperature values** (outside the range of 10–40 degrees).
+- **Test for adding rooms to the building**.
+- **Test for simulating building temperature**.
+- **Test for adjusting room temperatures**.
+
+To run the tests:
 ```bash
-git clone https://github.com/jforjha/building-temperature-control.git
-cd building-temperature-control
-mvn clean package
-java -jar target/your-app-name.jar
+mvn test
+    
 
  
